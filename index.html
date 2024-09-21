@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bot da Gnose</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
 </head>
 <body style="margin: 0px; background: black;">
     <div class="colunacentro">
-        <form>
+        <form id="formBoterson">
             <div class="history" id="story" style="height: 90vh; background-color: white;"></div>
             <div class="options">
                 <select name="matrix" id="matrix">
@@ -18,12 +17,13 @@
                 <select name="algoritmos" id="algoritmos">
                     <option value="b">b</option>
                 </select> 
-                <input id="energiaCognitiva" type="number" placeholder="atenção">
+                <input id="energiaCognitiva" type="number" step="0.0001" placeholder="atenção (valor de 0 a 1)">
             </div>
             <div class="calaboca">
                 <input  id="inputbox" type="text">
             </div>
-            <button onclick="callBot()">enviar</button>
+            <button type="submit">Enviar</button>
+            <script src="index.js"></script>
         </form>
     </div>
 </body>

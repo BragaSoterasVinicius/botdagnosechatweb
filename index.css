@@ -9,7 +9,14 @@
 .colunacentro{
     width: 50%; height: 100vh; background-color: yellow; margin-left: 25%;
 }
-
+.userfala{
+    background-color: burlywood;
+    margin: 5px;
+}
+.botfala{
+    background-color: coral;
+    margin: 5px;
+}
 @media (max-width:500px){
     .colunacentro{
         width: 100%;

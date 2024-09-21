@@ -1,7 +1,19 @@
-function createBotAnswer(data){
+document.getElementById('formBoterson').addEventListener('submit', function(event){
+    event.preventDefault();
+    const nomeMatrix = document.getElementById("matrix").value;
+    const algoritmo = document.getElementById("algoritmos").value;
+    const user_message = document.getElementById("inputbox").value;
+    const energiaCognitiva = document.getElementById("energiaCognitiva").value;
+
+    createMessageBox(user_message, "userfala");
+    document.getElementById('inputbox').value = "";
+    callBot(nomeMatrix, algoritmo, user_message, energiaCognitiva);
+});
+
+function createMessageBox(data, classname){
         const galeriaListDiv = document.getElementById('story');
         const content = document.createElement('div');
-        content.className = "botfala"
+        content.className = classname
         content.textContent = data
         galeriaListDiv.appendChild(content);
         galeriaListDiv.scrollTop = galeriaListDiv.scrollHeight;
@@ -10,11 +22,11 @@ function createBotAnswer(data){
 function callBot(nomeMatrix, algoritmo, user_message, energiaCognitiva){
     const botUrl = 'http://127.0.0.1:5000/speak';
     const data = {
-        matrixName:"sabedoriajaponesa",
-        user_message:"fala um pouco sobre a natureza das coisas mishima forte abraço",
+        matrixName: nomeMatrix,
+        user_message: user_message,
         shouldReturn:"True",
-        algoritmo:"b",
-        energiaCognitiva:"0.995",
+        algoritmo:algoritmo,
+        energiaCognitiva: energiaCognitiva,
         salvarNaMatrix:"False",
         returnObject:"True"
     };
@@ -35,7 +47,7 @@ function callBot(nomeMatrix, algoritmo, user_message, energiaCognitiva){
     .then(data => {
         textContent = JSON.stringify(data, null, 2);
         console.log(textContent);
-        createBotAnswer(textContent)
+        createMessageBox(textContent, "botfala")
         return textContent;
     })
     .catch(error => {
