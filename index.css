@@ -1,0 +1,18 @@
+#inputbox{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+.history{
+    overflow: auto;
+}
+.colunacentro{
+    width: 50%; height: 100vh; background-color: yellow; margin-left: 25%;
+}
+
+@media (max-width:500px){
+    .colunacentro{
+        width: 100%;
+        margin-left: 0;
+    }
+}
