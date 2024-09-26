@@ -1,21 +1,45 @@
+.calaboca{
+    text-align: center;
+}
+
 #inputbox{
+    border-radius: 7px;
     width: 90%;
-    margin-left: 5%;
     margin-top: 10px;
 }
+#apagar{
+    margin-left: 20px;
+    height: 80px;
+    width: 80px;
+    margin-top: 20px;
+}
+
 .history{
     overflow: auto;
 }
 .colunacentro{
-    width: 50%; height: 100vh; background-color: yellow; margin-left: 25%;
+    width: 50%; height: 100vh; background-color: coral; margin-left: 25%;
 }
 .userfala{
+    border-radius: 4px;
+    padding: 7px;
     background-color: burlywood;
-    margin: 5px;
+    margin-right: 20px;
+    text-align: end;
+    margin-top: 10px;
+    margin-left: 10%;
 }
 .botfala{
+    padding: 7px;
+    border-radius: 4px;
     background-color: coral;
-    margin: 5px;
+    margin-left: 20px;
+    margin-right: 10%;
+    margin-top: 10px;
+}
+.options{
+    margin-top: 10px;
+    text-align: center;
 }
 @media (max-width:500px){
     .colunacentro{
