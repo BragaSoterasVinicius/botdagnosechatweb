@@ -1,7 +1,11 @@
 .calaboca{
     text-align: center;
 }
-
+body{
+    background-image: url('calm.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #inputbox{
     border-radius: 7px;
     width: 90%;
@@ -15,24 +19,27 @@
 }
 
 .history{
+    padding-top: 10px;
     overflow: auto;
 }
 .colunacentro{
-    width: 50%; height: 100vh; background-color: coral; margin-left: 25%;
+    width: 50%; height: 100vh; background-color: rgba(0,0,0,0.69); margin-left: 25%;
 }
 .userfala{
+    color: black;
     border-radius: 4px;
-    padding: 7px;
-    background-color: burlywood;
+    padding: 20px;
+    background-color: white;
     margin-right: 20px;
     text-align: end;
     margin-top: 10px;
     margin-left: 10%;
 }
 .botfala{
-    padding: 7px;
+    color: white;
+    padding: 20px;
     border-radius: 4px;
-    background-color: coral;
+    background-color: #0a0a0a;
     margin-left: 20px;
     margin-right: 10%;
     margin-top: 10px;
