@@ -12,10 +12,14 @@ document.getElementById('formBoterson').addEventListener('submit', function(even
 
 function setList(list, listTypeid){
     const select = document.getElementById(listTypeid);
-    const options = document.createElement('option');
-    options.text = list;
-    options.value = list;
-    select.appendChild(options)
+    console.log(list)
+    for (let i = 0; i < list.length; i++) {
+        const options = document.createElement('option');
+        options.text = list[i];
+        options.value = list[i] ;
+        select.appendChild(options)
+      }
+
 }
 
 function getMatrixList(){
@@ -30,7 +34,8 @@ function getMatrixList(){
     })
     .then(data => {
         listContent = JSON.stringify(data, null, 2);
-        setList(listContent, 'matrix');
+        const jsonArray = JSON.parse(listContent);
+        setList(jsonArray, 'matrix');
     })
 }
 
@@ -46,7 +51,8 @@ function getAlgoritmosList(){
     })
     .then(data => {
         listContent = JSON.stringify(data, null, 2);
-        setList(listContent, 'algoritmos');
+        const jsonArray = JSON.parse(listContent);
+        setList(jsonArray, 'algoritmos');
     })
 }
 
