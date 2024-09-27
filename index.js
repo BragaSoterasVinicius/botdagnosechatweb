@@ -1,3 +1,6 @@
+getMatrixList();
+getAlgoritmosList();
+
 document.getElementById('formBoterson').addEventListener('submit', function(event){
     event.preventDefault();
     const nomeMatrix = document.getElementById("matrix").value;
