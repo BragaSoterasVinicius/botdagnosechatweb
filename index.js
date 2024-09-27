@@ -10,6 +10,46 @@ document.getElementById('formBoterson').addEventListener('submit', function(even
     callBot(nomeMatrix, algoritmo, user_message, energiaCognitiva);
 });
 
+function setList(list, listTypeid){
+    const select = document.getElementById(listTypeid);
+    const options = document.createElement('option');
+    options.text = list;
+    options.value = list;
+    select.appendChild(options)
+}
+
+function getMatrixList(){
+    const botUrl = 'http://127.0.0.1:5000/listmatrixes';
+    fetch(botUrl)
+    .then(response => {
+
+        if (!response.ok) {
+        throw new Error('Problema de conexão');
+        }
+        return response.json();
+    })
+    .then(data => {
+        listContent = JSON.stringify(data, null, 2);
+        setList(listContent, 'matrix');
+    })
+}
+
+function getAlgoritmosList(){
+    const botUrl = 'http://127.0.0.1:5000/listalgoritms';
+    fetch(botUrl)
+    .then(response => {
+
+        if (!response.ok) {
+        throw new Error('Problema de conexão');
+        }
+        return response.json();
+    })
+    .then(data => {
+        listContent = JSON.stringify(data, null, 2);
+        setList(listContent, 'algoritmos');
+    })
+}
+
 function createMessageBox(data, classname){
         const galeriaListDiv = document.getElementById('story');
         const content = document.createElement('div');
